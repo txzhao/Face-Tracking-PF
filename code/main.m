@@ -90,12 +90,11 @@ while (1)
     ini_t = cur_t;
 end
 
+% export video into local file
 v = VideoWriter('newfile1.avi');
 v.FrameRate = 0.3*vid.FrameRate;
 open(v);
 writeVideo(v, F);
 close(v);
-% movie2avi(F, 'moviename.avi', 'compression', 'None');
-% movie(F)
     
     
