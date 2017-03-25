@@ -1,4 +1,5 @@
 clear;
+addpath('/Users/MMGF2/Desktop/AEpro/videos');
 
 %% initial setup
 vid = VideoReader('sample3.mp4');
