@@ -2,7 +2,7 @@ clear;
 addpath('/Users/MMGF2/Desktop/AEpro/videos');
 
 %% initial setup
-vid = VideoReader('sample4.mp4');
+vid = VideoReader('sample1.mp4');
 nFrames = vid.NumberOfFrames;
 startFrame = 1;
 step = 4;
@@ -22,7 +22,7 @@ for i = startFrame : step : nFrames
 end
 
 %% initialize parameters
-endpoint = 200;
+endpoint = 500;
 idx = 1;
 N = 50;
 imsize = [size(im, 2), size(im, 1)];
@@ -44,7 +44,6 @@ att = 0.5;
 %% main algorithm
 % initialize target and particles in two implementations
 [target, hist_t, w_clr, p_clr] = init_clr(ini_state, im, N, range_c, sigma_c);
-% img = double(rgb2gray(im));
 [~, phi_t, w_mnt, p_mnt] = init_mnt(ini_state, im, N, range_m, sigma_m);
 
 err = [];
@@ -57,7 +56,7 @@ while (1)
     [p_mnt, w_mnt] = systematic_resample(p_mnt, w_mnt);
 %     [p_clr, w_clr] = multinomial_resample(p_clr, w_clr);
 %     [p_mnt, w_mnt] = multinomial_resample(p_mnt, w_mnt);
-    
+        
     % propagate each particles based on dynamic model
     p_clr = propagate(p_clr, var_c, imsize, bounds_c);
     p_mnt = propagate(p_mnt, var_m, imsize, bounds_m);
@@ -70,7 +69,6 @@ while (1)
     cur_im = read(vid, cur_t);
     t_state = faceDetect(cur_im, 0);
     t_state = corner2center(t_state);
-%     cur_img = double(rgb2gray(cur_im));
     
     % show frames
     fig = figure();
@@ -147,11 +145,12 @@ hold on
 plot(1 : step : step*(size(err_c, 2) - 1) + 1, err_c, 'b-o');
 plot(1 : step : step*(size(err_m, 2) - 1) + 1, err_m, 'r-o');
 
+
 % export video into local file
-% v = VideoWriter('newfile1.avi');
-% v.FrameRate = 1.5/step*vid.FrameRate;
-% open(v);
-% writeVideo(v, F);
-% close(v);
+v = VideoWriter('newfile1.avi');
+v.FrameRate = 1.5/step*vid.FrameRate;
+open(v);
+writeVideo(v, F);
+close(v);
 
-
+   
