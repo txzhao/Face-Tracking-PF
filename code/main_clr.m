@@ -41,6 +41,7 @@ bounds = [50, 20, 150, 50, 150, 0.1];
 while (1)
     % resample particles
     [particles, weights] = systematic_resample(particles, weights);
+%     [particles, weights] = multinomial_resample(particles, weights);
     
     % propagate each particles based on dynamic model
     particles = propagate(particles, var, imsize, bounds);
