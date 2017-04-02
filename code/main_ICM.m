@@ -145,10 +145,11 @@ hold on
 plot(1 : step : step*(size(err_c, 2) - 1) + 1, err_c, 'b-o');
 plot(1 : step : step*(size(err_m, 2) - 1) + 1, err_m, 'r-o');
 
-
 % export video into local file
-v = VideoWriter('newfile1.avi');
-v.FrameRate = 1.5/step*vid.FrameRate;
-open(v);
-writeVideo(v, F);
-close(v);
+% v = VideoWriter('newfile1.avi');
+% v.FrameRate = 1.5/step*vid.FrameRate;
+% open(v);
+% writeVideo(v, F);
+% close(v);
+
+
