@@ -22,7 +22,7 @@ for i = startFrame : step : nFrames
 end
 
 %% initialize parameters
-endpoint = 600;
+endpoint = 200;
 idx = 1;
 N = 50;
 imsize = [size(im, 2), size(im, 1)];
@@ -47,6 +47,10 @@ att = 0.5;
 % img = double(rgb2gray(im));
 [~, phi_t, w_mnt, p_mnt] = init_mnt(ini_state, im, N, range_m, sigma_m);
 
+err = [];
+err_c = [];
+err_m = [];
+
 while (1)
     % resample particles
     [p_clr, w_clr] = systematic_resample(p_clr, w_clr);
@@ -62,6 +66,8 @@ while (1)
          break;
     end
     cur_im = read(vid, cur_t);
+    t_state = faceDetect(cur_im, 0);
+    t_state = corner2center(t_state);
 %     cur_img = double(rgb2gray(cur_im));
     
     % show frames
@@ -108,6 +114,11 @@ while (1)
     state_f = center2corner(est_f);
     rectangle('Position', state_f, 'EdgeColor', 'm', 'LineWidth', 2.5);
     
+    % compute errors of different PFs
+    err = [err, sqrt((est_f(1) - t_state(1))^2 + (est_f(2) - t_state(2))^2)];
+    err_c = [err_c, sqrt((est_clr(1) - t_state(1))^2 + (est_clr(2) - t_state(2))^2)];
+    err_m = [err_m, sqrt((est_mnt(1) - t_state(1))^2 + (est_mnt(2) - t_state(2))^2)];
+    
     % save this frame with bounding box
     F(idx) = getframe(fig);
     idx = idx + 1;
@@ -127,12 +138,17 @@ while (1)
     ini_t = cur_t;
 end
 
-% export video into local file
-% v = VideoWriter('newfile1.avi');
-% v.FrameRate = 1.5/step*vid.FrameRate;
-% open(v);
-% writeVideo(v, F);
-% close(v);
+% plot the error performances of PFs
+figure()
+plot(1 : step : step*(size(err, 2) - 1) + 1, err, 'k-o');
+hold on
+plot(1 : step : step*(size(err_c, 2) - 1) + 1, err_c, 'b-o');
+plot(1 : step : step*(size(err_m, 2) - 1) + 1, err_m, 'r-o');
 
-    
-    
+
+% export video into local file
+v = VideoWriter('newfile1.avi');
+v.FrameRate = 1.5/step*vid.FrameRate;
+open(v);
+writeVideo(v, F);
+close(v);
