@@ -55,6 +55,8 @@ while (1)
     % resample particles
     [p_clr, w_clr] = systematic_resample(p_clr, w_clr);
     [p_mnt, w_mnt] = systematic_resample(p_mnt, w_mnt);
+%     [p_clr, w_clr] = multinomial_resample(p_clr, w_clr);
+%     [p_mnt, w_mnt] = multinomial_resample(p_mnt, w_mnt);
     
     % propagate each particles based on dynamic model
     p_clr = propagate(p_clr, var_c, imsize, bounds_c);
