@@ -83,6 +83,18 @@ while (1)
 %         rectangle('Position', BB_mnt, 'EdgeColor', 'g', 'LineWidth', 2);
 %     end
     
+    % calculate color histogram for each particle
+    for i = 1 : N
+        state = center2corner(p_clr(i, :));
+        hist_p(i, :) = colorDistribute(cur_im, state);
+        phi_state = center2corner(p_mnt(i, :));
+        phi_p(i, :) = momentDistribute(cur_im, phi_state);
+    end
+    
+    % update weights based on Bhattacharyya distance
+    w_clr = weight_clr(hist_t, hist_p, sigma_c);
+    w_mnt = weight_mnt(phi_t, phi_p, sigma_m);
+    
     % threshold particles with low weights
     w_clr(find(w_clr < threshold_c)) = 0;
     w_clr = w_clr/sum(w_clr);
@@ -122,18 +134,6 @@ while (1)
     % save this frame with bounding box
     F(idx) = getframe(fig);
     idx = idx + 1;
-    
-    % calculate color histogram for each particle
-    for i = 1 : N
-        state = center2corner(p_clr(i, :));
-        hist_p(i, :) = colorDistribute(cur_im, state);
-        phi_state = center2corner(p_mnt(i, :));
-        phi_p(i, :) = momentDistribute(cur_im, phi_state);
-    end
-    
-    % update weights based on Bhattacharyya distance
-    w_clr = weight_clr(hist_t, hist_p, sigma_c);
-    w_mnt = weight_mnt(phi_t, phi_p, sigma_m);
     
     ini_t = cur_t;
 end
