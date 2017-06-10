@@ -5,5 +5,6 @@ This repo is an implementation of an integrated face tracker using color-based a
 * In the "code" folder, run the script main_ICM.m to see how the integrated face tracker works; run the script main_clr.m to see how the color-based face tracker works alone.
 * In the "videos" folder, "sample3.mp4" and "sample4.mp4" are input videos, and others are outputs from the face tracking system.
 * In the "doc" folder, you can find the [report](https://github.com/txzhao/Face-Tracking-PF/blob/master/doc/report.pdf) with more details.
-## References
 
+## References
+[color-based PF](http://www.sciencedirect.com/science/article/pii/S0262885602001294), [fusion method](http://ieeexplore.ieee.org/abstract/document/5347867/)
