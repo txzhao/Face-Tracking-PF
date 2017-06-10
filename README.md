@@ -3,7 +3,7 @@ This repo is an implementation of an integrated face tracker using color-based a
 
 ## Contents
 * In the "code" folder, run the script main_ICM.m to see how the integrated face tracker works; run the script main_clr.m to see how the color-based face tracker works alone.
-* fjsf
+* In the "videos" folder, videos with names starting with "out_" ff
 
 ## References
 
