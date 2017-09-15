@@ -1,4 +1,5 @@
 # Face-Tracking-PF
+
 This is a repo for course project of [EL2320 Applied Estimation](https://www.kth.se/social/course/EL2320/) at KTH.
 
 The project is an implementation of an [integrated face tracker](http://ieeexplore.ieee.org/abstract/document/5347867/) using [color-based](http://www.sciencedirect.com/science/article/pii/S0262885602001294) and moment-based particle filters. 
@@ -23,24 +24,29 @@ To test the functionality of the face tracker, videos of moving faces are fed in
 
 #### Color-based PF (left: particles + posterior state; right: posterior state)
 
-**Red** bounding boxes represent particles; **blue** bounding box represents posterior state.
+*Red* bounding boxes represent *particles*; *blue* bounding box represents *posterior state*.
 <p align="center">
 <img src="https://github.com/txzhao/Face-Tracking-PF/blob/master/results/out_fast_particles.gif" width="300"/> <img src="https://github.com/txzhao/Face-Tracking-PF/blob/master/results/out_fast.gif" width="300"/>
 </p>
 
 #### Integrated PF (left: particles + posterior state; right: posterior state)
 
-**Red** and **blue** bounding boxes represent particles posterior state and from color-based model; **yellow** and **black** bounding boxes represent particles posterior state and from color-based model.
+*Red* and *blue* bounding boxes represent *particles* and *posterior state* from color-based model; *yellow* and *black* bounding boxes represent *particles* and *posterior state* from color-based model.
 <p align="center">
 <img src="https://github.com/txzhao/Face-Tracking-PF/blob/master/results/color-moment_particles.gif" width="300"/> <img src="https://github.com/txzhao/Face-Tracking-PF/blob/master/results/integrated_2.gif" width="300"/>
 </p>
 
 #### Error performances of different particle filters
+
 <p align="center">
 <img src="https://github.com/txzhao/Face-Tracking-PF/blob/master/results/error.png"/>
 </p>
 
-## Conclusion
+## Findings
+
+- Moment-based PF performs better dynamically and gives quick responses when target changes its moving direction;
+- Color-based PF is more stable but responds relatively slowly;
+- Integrated PF takes advantages of the above two PFs and outperforms them in general.
 
 ## References
 
