@@ -19,6 +19,13 @@ To test the functionality of the face tracker, videos of moving faces are fed in
 * In the "videos" folder, "sample3.mp4" and "sample4.mp4" are input videos, and others are outputs from the face tracking system.
 * In the "doc" folder, you can find the [report](https://github.com/txzhao/Face-Tracking-PF/blob/master/doc/report.pdf) with more details.
 
+## Results
+
+#### PASCAL VOC
+<p align="center">
+<img src="https://github.com/txzhao/Face-Tracking-PF/blob/master/videos/integrated_2.gif" width="430"/>
+</p>
+
 ## References
 
 [color-based PF](http://www.sciencedirect.com/science/article/pii/S0262885602001294), [fusion method](http://ieeexplore.ieee.org/abstract/document/5347867/)
