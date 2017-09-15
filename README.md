@@ -2,7 +2,7 @@
 
 This is a repo for course project of [EL2320 Applied Estimation](https://www.kth.se/social/course/EL2320/) at KTH.
 
-The project is an implementation of an [integrated face tracker](http://ieeexplore.ieee.org/abstract/document/5347867/) using [color-based](http://www.sciencedirect.com/science/article/pii/S0262885602001294) and moment-based particle filters. 
+The project is an implementation of an [integrated face tracker](http://ieeexplore.ieee.org/abstract/document/5347867/) using [color-based](http://www.sciencedirect.com/science/article/pii/S0262885602001294) and [moment-based](http://ieeexplore.ieee.org/abstract/document/5347867/) particle filters (PFs). 
 
 To test the functionality of the face tracker, videos of moving faces are fed into the system and particles as prediction are labeled in each frame of the video. Particles are in the represention of bounding boxes with different colors. The code is mainly done in Matlab. For more details, please read the [report](https://github.com/txzhao/Face-Tracking-PF/blob/master/doc/report.pdf).
 
@@ -44,8 +44,8 @@ To test the functionality of the face tracker, videos of moving faces are fed in
 
 ## Findings
 
-- Moment-based PF performs better dynamically and gives quick responses when target changes its moving direction;
-- Color-based PF is more stable but responds relatively slowly;
+- Moment-based PF performs better dynamically and responds quickly when target changes its moving direction;
+- Color-based PF is more stable but responds relatively slowly compared with moment-based PF;
 - Integrated PF takes advantages of the above two PFs and outperforms them in general.
 
 ## References
