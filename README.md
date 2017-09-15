@@ -22,16 +22,16 @@ To test the functionality of the face tracker, videos of moving faces are fed in
 ## Results
 
 #### Color-based PF (left: with particles; right: without particles)
-***Red bounding boxes represent particles; blue bounding box represents posterior state.***
 <p align="center">
 <img src="https://github.com/txzhao/Face-Tracking-PF/blob/master/results/out_fast_particles.gif" width="300"/> <img src="https://github.com/txzhao/Face-Tracking-PF/blob/master/results/out_fast.gif" width="300"/>
 </p>
+*Red bounding boxes represent particles; blue bounding box represents posterior state.*
 
 #### Integrated PF (left: with particles; right: without particles)
-***Red bounding boxes represent particles from color-based model; yellow bounding boxes represent particles from moment-based model; blue bounding box represents posterior state from color-based model; black bounding box represents posterior state from moment-based model;***
 <p align="center">
 <img src="https://github.com/txzhao/Face-Tracking-PF/blob/master/results/color-moment_particles.gif" width="300"/> <img src="https://github.com/txzhao/Face-Tracking-PF/blob/master/results/integrated_2.gif" width="300"/>
 </p>
+*Red and blue bounding boxes represent particles posterior state and from color-based model; yellow and black bounding boxes represent particles posterior state and from color-based model.*
 
 #### Error performances of different particle filters
 <p align="center">
