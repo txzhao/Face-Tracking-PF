@@ -23,7 +23,7 @@ To test the functionality of the face tracker, videos of moving faces are fed in
 
 #### PASCAL VOC
 <p align="center">
-<img src="https://github.com/txzhao/Face-Tracking-PF/blob/master/videos/integrated_2.gif" width="430"/>
+<img src="https://github.com/txzhao/Face-Tracking-PF/blob/master/videos/out_fast_particles.gif" width="100"/> <img src="https://github.com/txzhao/Face-Tracking-PF/blob/master/videos/integrated_2.gif" width="100"/>
 </p>
 
 ## References
