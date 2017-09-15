@@ -21,9 +21,14 @@ To test the functionality of the face tracker, videos of moving faces are fed in
 
 ## Results
 
-#### PASCAL VOC
+#### Color-based PF (left) and integrated PF (right)
 <p align="center">
 <img src="https://github.com/txzhao/Face-Tracking-PF/blob/master/videos/out_fast_particles.gif" width="300"/> <img src="https://github.com/txzhao/Face-Tracking-PF/blob/master/videos/integrated_2.gif" width="300"/>
+</p>
+
+#### Error performances of different particle filters
+<p align="center">
+<img src="https://github.com/txzhao/Face-Tracking-PF/blob/master/videos/error.png"/>
 </p>
 
 ## References
