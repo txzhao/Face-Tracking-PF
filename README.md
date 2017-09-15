@@ -1,8 +1,6 @@
 # Face-Tracking-PF
 
-This is a repo for course project of [EL2320 Applied Estimation](https://www.kth.se/social/course/EL2320/) at KTH.
-
-The project is an implementation of an [integrated face tracker](http://ieeexplore.ieee.org/abstract/document/5347867/) using [color-based](http://www.sciencedirect.com/science/article/pii/S0262885602001294) and [moment-based](http://ieeexplore.ieee.org/abstract/document/5347867/) particle filters (PFs). 
+This is a repo for course project of [EL2320 Applied Estimation](https://www.kth.se/social/course/EL2320/) at KTH. This project is an implementation of an [integrated face tracker](http://ieeexplore.ieee.org/abstract/document/5347867/) using [color-based](http://www.sciencedirect.com/science/article/pii/S0262885602001294) and [moment-based](http://ieeexplore.ieee.org/abstract/document/5347867/) particle filters (PFs). 
 
 To test the functionality of the face tracker, videos of moving faces are fed into the system and particles as prediction are labeled in each frame of the video. Particles are in the represention of bounding boxes with different colors. The code is mainly done in Matlab. For more details, please read the [report](https://github.com/txzhao/Face-Tracking-PF/blob/master/doc/report.pdf).
 
@@ -17,7 +15,7 @@ To test the functionality of the face tracker, videos of moving faces are fed in
 ## Contents
 
 - In the "code" folder, run the script main_ICM.m to see how the integrated face tracker works; run the script main_clr.m to see how the color-based face tracker works alone.
-- In the "videos" folder, "sample3.mp4" and "sample4.mp4" are input videos, and others are outputs from the face tracking system.
+- In the "videos" folder, "sample3.mp4" and "sample4.mp4" are input videos, and the others are outputs from the face tracking system.
 - In the "doc" folder, you can find the [report](https://github.com/txzhao/Face-Tracking-PF/blob/master/doc/report.pdf) with more details.
 
 ## Results
