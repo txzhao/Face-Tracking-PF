@@ -48,6 +48,6 @@ To test the functionality of the face tracker, videos of moving faces are fed in
 
 ## References
 
-**[1]** Nummiaro, Katja, Esther Koller-Meier, and Luc Van Gool. "**An adaptive color-based particle filter.**" Image and vision computing 21.1 (2003): 99-110. [[link]](http://www.sciencedirect.com/science/article/pii/S0262885602001294)
+**[1]** Nummiaro, Katja, Esther Koller-Meier, and Luc Van Gool. "**An adaptive color-based particle filter.**" Image and vision computing 21.1 (2003): 99-110. [[paper]](http://www.sciencedirect.com/science/article/pii/S0262885602001294)
 
-**[2]** Junxiang, Gao, Zhou Tong, and Liu Yong. "**Face tracking using color histograms and moment invariants.**" Broadband Network & Multimedia Technology, 2009. IC-BNMT'09. 2nd IEEE International Conference on. IEEE, 2009. [[link]](http://ieeexplore.ieee.org/abstract/document/5347867/)
+**[2]** Junxiang, Gao, Zhou Tong, and Liu Yong. "**Face tracking using color histograms and moment invariants.**" Broadband Network & Multimedia Technology, 2009. IC-BNMT'09. 2nd IEEE International Conference on. IEEE, 2009. [[paper]](http://ieeexplore.ieee.org/abstract/document/5347867/)
